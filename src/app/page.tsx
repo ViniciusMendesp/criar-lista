@@ -27,7 +27,7 @@ export default function Home() {
   const [listaDeCompras, setListaDeCompras] = useState<ListaItem[]>([]);
   const [unidade, setUnidade] = useState<string>("");
 
-  const unidadesDisponiveis = ["kg", "g", "L", "ml"];
+  const unidadesDisponiveis = ["Kg", "g", "L", "ml"];
 
   const adicionarItem = (e: React.FormEvent) => {
     e.preventDefault();
