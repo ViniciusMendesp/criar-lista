@@ -83,7 +83,7 @@ export default function Home() {
             <TableRow>
               <TableHead className="w-[100px]">Nome</TableHead>
               <TableHead>Quantidade</TableHead>
-              <TableHead>Remover</TableHead>
+              <TableHead className="text-right">Remover</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
