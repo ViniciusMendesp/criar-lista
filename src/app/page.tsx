@@ -18,20 +18,25 @@ import { Send, Trash } from "lucide-react";
 interface ListaItem {
   nome: string;
   quantidade: string;
+  unidade: string;
 }
 
 export default function Home() {
   const [nomeProduto, setNomeProduto] = useState<string>("");
   const [quantidade, setQuantidade] = useState<string>("");
   const [listaDeCompras, setListaDeCompras] = useState<ListaItem[]>([]);
+  const [unidade, setUnidade] = useState<string>("");
+
+  const unidadesDisponiveis = ["kg", "g", "L", "ml"];
 
   const adicionarItem = (e: React.FormEvent) => {
     e.preventDefault();
-    if (nomeProduto && quantidade) {
-      const novoItem: ListaItem = { nome: nomeProduto, quantidade };
+    if (nomeProduto && quantidade && unidade) {
+      const novoItem: ListaItem = { nome: nomeProduto, quantidade, unidade };
       setListaDeCompras([...listaDeCompras, novoItem]);
       setNomeProduto("");
       setQuantidade("");
+      setUnidade("");
     }
   };
 
@@ -44,7 +49,7 @@ export default function Home() {
   const enviarLista = (e: React.FormEvent) => {
     e.preventDefault();
     const mensagem = `LISTA DE COMPRAS%0A${listaDeCompras
-      .map((item) => `${item.nome} = ${item.quantidade}`)
+      .map((item) => `${item.nome} = ${item.quantidade} ${item.unidade}`)
       .join("%0A")}`;
     const url = `https://wa.me/?text=${mensagem}`;
     window.open(url, "_blank");
@@ -69,6 +74,19 @@ export default function Home() {
             value={quantidade}
             onChange={(e) => setQuantidade(e.target.value)}
           />
+          <div className="flex gap-2">
+            {unidadesDisponiveis.map((opcao, index) => (
+              <label key={index} className="flex gap-2 items-center">
+                <Input
+                  type="radio"
+                  value={opcao}
+                  checked={unidade === opcao}
+                  onChange={(e) => setUnidade(e.target.value)}
+                />
+                {opcao}
+              </label>
+            ))}
+          </div>
           <Button onClick={adicionarItem}>Adicionar item à lista</Button>
           <Button
             variant="secondary"
@@ -82,7 +100,8 @@ export default function Home() {
           <TableHeader>
             <TableRow>
               <TableHead className="w-[100px]">Nome</TableHead>
-              <TableHead>Quantidade</TableHead>
+              <TableHead className="text-left">Quantidade</TableHead>
+              <TableHead className="text-left">Unidade</TableHead>
               <TableHead className="text-right">Remover</TableHead>
             </TableRow>
           </TableHeader>
@@ -91,6 +110,7 @@ export default function Home() {
               <TableRow key={index}>
                 <TableCell>{item.nome}</TableCell>
                 <TableCell>{item.quantidade}</TableCell>
+                <TableCell>{item.unidade}</TableCell>
                 <TableCell className="text-right">
                   <Button
                     size="icon"
