@@ -101,7 +101,7 @@ export default function Home() {
             <TableRow>
               <TableHead className="w-[100px]">Nome</TableHead>
               <TableHead className="text-left">Quantidade</TableHead>
-              <TableHead className="text-left">Unidade</TableHead>
+              <TableHead className="text-left">Und</TableHead>
               <TableHead className="text-right">Remover</TableHead>
             </TableRow>
           </TableHeader>
