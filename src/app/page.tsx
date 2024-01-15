@@ -67,12 +67,15 @@ export default function Home() {
             placeholder="Nome do produto"
             value={nomeProduto}
             onChange={(e) => setNomeProduto(e.target.value)}
+            required
           />
           <Input
             placeholder="Quantidade"
             type="number"
             value={quantidade}
             onChange={(e) => setQuantidade(e.target.value)}
+            min={1}
+            required
           />
           <div className="flex gap-2">
             {unidadesDisponiveis.map((opcao, index) => (
@@ -82,16 +85,23 @@ export default function Home() {
                   value={opcao}
                   checked={unidade === opcao}
                   onChange={(e) => setUnidade(e.target.value)}
+                  required
                 />
                 {opcao}
               </label>
             ))}
           </div>
-          <Button onClick={adicionarItem}>Adicionar item à lista</Button>
+          <Button
+            onClick={adicionarItem}
+            disabled={!nomeProduto || !quantidade || !unidade}
+          >
+            Adicionar item à lista
+          </Button>
           <Button
             variant="secondary"
             className="flex gap-2"
             onClick={enviarLista}
+            disabled={listaDeCompras.length === 0}
           >
             Enviar lista <Send size={16} />
           </Button>
