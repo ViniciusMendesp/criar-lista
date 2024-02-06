@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Lista de Compras App 🛍️
 
-## Getting Started
+![Lista de Compras App](https://github.com/ViniciusMendesp/criar-lista/assets/63562960/ab0d62c7-92a9-41c0-b153-7c7f22ad205b)
 
-First, run the development server:
+Um aplicativo minimalista para criar e gerenciar listas de compras. Desenvolvido utilizando Next.js, estilizado com Tailwind CSS e com componentes do Shadcn.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Funcionalidades 🛠️
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Adição e Remoção Fáceis:** Adicione facilmente produtos à sua lista de compras e remova-os com apenas um clique.
+- **Interface Simples e Rápida:** A interface é básica e intuitiva, focada apenas na criação de listas de compras, o que torna o processo rápido e fácil.
+- **Compartilhamento Ágil:** Após criar sua lista, compartilhe-a facilmente pelo WhatsApp com seus amigos e familiares.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Como testar 📲
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Você pode testar o aplicativo [aqui](https://criar-lista.vercel.app/).
 
-## Learn More
+## Contribuindo 🔥
 
-To learn more about Next.js, take a look at the following resources:
+Se você quiser contribuir para este projeto, siga estas etapas:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Fork este repositório
+2. Crie sua branch de feature: `git checkout -b feature/NomeDaSuaFeature`
+3. Faça suas alterações e commit: `git commit -am 'Adiciona uma nova feature'`
+4. Envie para a sua branch: `git push origin feature/NomeDaSuaFeature`
+5. Abra um pull request
